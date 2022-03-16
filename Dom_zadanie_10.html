@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet"> 
+      <style>
+          #alp {
+              margin-top: 20px;
+          }
+      </style>
+    <title>Document</title>
+</head>
+<body>
+    <article id="art"></article>    
+
+    <button id=but1"  onclick="showCount(),showString()">Нажмите для вывода считалочки и алфавита</button>
+    
+    <div id="alp"></div>
+    
+    <script>
+        function showCount() {
+        art.innerHTML = `
+        <p>Alphabet</p>
+            <section id="sect">    
+                <p class = "letter"> A B C D E F G </p>
+                <p>come on out and play with me.</p>
+                <p class = "letter">H I J </p>
+                <p>come and play.</p> 
+                <p class = "letter">K L M </p>
+                <p>come with them. </p>
+                <p class = "letter">N O P </p>
+                <p>near the tree. </p>
+                <p class = "letter">Q R S T U V </p>
+                <p>Oh, how happy we will be. </p>
+                <p class = "letter">W X Y Z </p>
+                <p>Lot's of fun for you and me. </p>
+            </section>
+        `
+            const colPar = document.getElementById("sect").getElementsByTagName("p");
+                for (let i = 0; i < colPar.length; i++) {
+                    colPar[i].style.cssText = `
+                    border: 2px dashed #a0a0a0;
+                    background-color: #fffb1b;
+                    color: #8c00ff;
+                    font-size: 20px;
+                    font-weight: 600;
+                    font-family: 'Dancing Script', cursive; ;
+                    `;
+                    }
+    }
+
+        function showString() {
+            let elements = document.querySelectorAll('.letter');
+
+                for (let elem of elements) {
+                    console.log(elem.innerHTML);
+                    alp.innerHTML += `${elem.innerHTML}`;
+
+        }
+        };
+    </script>
+</body>
+</html>
